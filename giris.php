@@ -21,7 +21,7 @@
           });
         }
       </script><!-- Giriş bilgilerini giris-kontrol.php sayfasına yönlendiren jquery kodu -->
-      <form class="col-6">
+      <form class="col-sm-6">
         <div class="form-group">
           <label for="eposta1">E-Posta</label>
           <input type="email" class="form-control" id="eposta1" aria-describedby="emailHelp" placeholder="E-Postanız" required>

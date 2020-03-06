@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-sm-9">
       <!-- Site içeriği Başlangıcı -->
-      <h2>Site Amacı</h2>
+      <h2 class="d-none d-print-block">Site Amacı</h2>
       ​<picture>
-        <source srcset="resimler/kontrol.jpg" type="image/svg+xml">
-        <img src="resimler/kontrol.jpg" class="img-fluid img-thumbnail" alt="...">
+        <source srcset="img/diagnosis2.jpg" type="image/svg+xml">
+        <img src="img/diagnosis2.jpg" class="img-fluid img-thumbnail" alt="...">
       </picture><!-- Anasayfadaki resim kodu -->
-      <p>İş kontrolleri için hatırlatıcı ekleyin ve periyodunu seçin, mail ile hatırlatılsın</p>
-      <p>Gruplar ekleyin, mesela "Yangın tüpü kontrolü" ve bu gruba eklenen kişilere o grubun periyoduna göre eposta ile hatırlatma yapılsın.</p>
+      <p><span id="ph-icerik1"></span></p>
+      <p><span id="ph-icerik2"></span></p>
 
       <!-- Site içeriği Sonu -->
     </div>

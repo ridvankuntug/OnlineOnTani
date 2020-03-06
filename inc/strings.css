@@ -1,0 +1,23 @@
+#ph-baslik:after {
+  content: "Başlık";
+}
+
+#ph-altbaslik:after {
+  content: "Alt Başlık";
+}
+
+#ph-menu:after {
+  content: "Menü";
+}
+
+#ph-icerik1:after {
+  content: "İçerik 1";
+}
+
+#ph-icerik2:after {
+  content: "İçerik 2";
+}
+
+#ph-icerik2:after {
+  content: "İçerik 2";
+}
