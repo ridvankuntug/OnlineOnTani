@@ -1,9 +1,9 @@
 #ph-baslik:after {
-  content: "Başlık";
+  content: "Online Ön Tanı";
 }
 
 #ph-altbaslik:after {
-  content: "Alt Başlık";
+  content: "Sağlığınız bizim için önemli.";
 }
 
 #ph-menu:after {
@@ -11,13 +11,9 @@
 }
 
 #ph-icerik1:after {
-  content: "İçerik 1";
+  content: "Kendinizde gördüğünüz belirtileri girin ve hastalığınızın ne olabileceğini öğrenin.";
 }
 
 #ph-icerik2:after {
-  content: "İçerik 2";
-}
-
-#ph-icerik2:after {
-  content: "İçerik 2";
+  content: "Bununla birlikte hangi polikliniğe gitmeniz gerektiğini de.";
 }
