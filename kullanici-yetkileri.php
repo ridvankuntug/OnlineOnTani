@@ -26,7 +26,13 @@
           $i=0;//Sayaç için değişken
           foreach ($query as $row) {
             if($row["kullanici_yetki"] <5){
-              echo '<div class="list-group-item list-group-item-action">'.++$i.'- <b>İsim: </b>'.$row["kullanici_ad"].' <b>E-Posta: </b>'.$row["kullanici_eposta"].' <b>Yetki: </b>'.$row["kullanici_yetki"].' <a href="kullanici-yetkilendir.php?yetki='.$row["kullanici_id"].'"><button type="button" class="btn-sm btn-primary" >Yetki Ver</button></a><a href="kullanici-yetkilendir.php?sil='.$row["kullanici_id"].'"><button type="button" class="btn-sm btn-primary" >Sil</button></a></div>';
+              echo '<div class="list-group-item list-group-item-action">'.++$i.
+              '- <b>İsim: </b>'.$row["kullanici_ad"].' <b>E-Posta: </b>'.$row["kullanici_eposta"].' <b>Yetki: </b>'.$row["kullanici_yetki"].
+              ' <a href="kullanici-yetkilendir.php?id='.$row["kullanici_id"].'&yetki=1"><button type="button" class="btn-sm btn-primary" >1</button></a>
+              <a href="kullanici-yetkilendir.php?id='.$row["kullanici_id"].'&yetki=2"><button type="button" class="btn-sm btn-primary" >2</button></a>
+              <a href="kullanici-yetkilendir.php?id='.$row["kullanici_id"].'&yetki=3"><button type="button" class="btn-sm btn-primary" >3</button></a>
+              <a href="kullanici-yetkilendir.php?id='.$row["kullanici_id"].'&yetki=4"><button type="button" class="btn-sm btn-primary" >4</button></a>
+              <a href="kullanici-yetkilendir.php?sil='.$row["kullanici_id"].'"><button type="button" class="btn-sm btn-primary" >Sil</button></a></div>';
             }//Admin dışındaki herkesi listeliyoruz
           }
         }catch(Exception $e) {//hata olursa ekrana yazıyoruz

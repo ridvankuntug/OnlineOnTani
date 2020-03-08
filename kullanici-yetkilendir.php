@@ -1,19 +1,20 @@
 <?php require("funcs/headerphp.php");
+$id = $_GET["id"];
 $yetki = $_GET["yetki"];
 $sil = $_GET["sil"];//kullanıcı-yetkileri.php sayfasından gelen veriler
 
 if($_SESSION["kullaniciYetki"] < 5){//İşlemi sadece admin yaptı ise gerçekleşiyor
   echo '<meta http-equiv="refresh" content="0;URL=index.php">';
 }
-else if($yetki > 1){//Yetki işlemi mi yapılacağını kontrol ediyor
+else if($yetki > 0){//Yetki işlemi mi yapılacağını kontrol ediyor
   try{
     $query = $db->prepare("UPDATE kullanici SET
     kullanici_yetki = :yeni_yetki
     WHERE kullanici_id = :id");
     $update = $query->execute(array(
-      "yeni_yetki" => 2,
-      "id" => $yetki
-    ));//Kullanıcı yetkisini 2 olarak güncelliyor
+      "yeni_yetki" => $yetki,
+      "id" => $id
+    ));//Kullanıcı yetkisini yeni gelen değere göre güncelliyor
     if ($update){//İşlem başarılı mı diye kontrol ediyor
       echo '<meta http-equiv="refresh" content="0;URL=kullanici-yetkileri.php?basarili=Yetki verildi.">';
     }
