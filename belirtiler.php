@@ -15,7 +15,7 @@
       }
 
       for($i = 1 ; $i < sizeof($belirtiler)+1 ; $i++){
-        echo '<option value="'.$i.'">'.$i.
+        echo '<option value="'.$belirtiler[$i][0].'">'.$i.
           '-'.$belirtiler[$i][1].
           '</option>';
       }
