@@ -147,7 +147,7 @@
         </div>
         <div class="form-group">
           <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Kaynak</label>
-          <input type="text" class="form-control form-control-sm" id="kaynakAdi" name="kaynakAdi" placeholder="Kaynak Adı">
+          <input type="text" class="form-control form-control-sm" id="kaynakAdi" name="kaynakAdi" placeholder="Kaynak Adı(Sonra belrtilecek ise 'Eklenecek' yazın)">
         </div>
         <div class="form-group" id="sonucForm"></div>
         <div class="form-group">

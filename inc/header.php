@@ -30,17 +30,16 @@
         <?php require("inc/links.php"); ?><!--Menü içeriğimiz links.php sayfasından geliyor-->
       </ul>
       <form class="form-inline my-2 my-lg-0" id="sonucCikis">
+        <ul class="navbar-nav mr-auto">
           <?php if($_SESSION["kullaniciYetki"] == 5){ ?><!--Kullıcılar sayfasını sadece admin görüntüleyebilir-->
-            <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
                 <a class="nav-link" href="kullanici-yetkileri.php">Kullanıcılar</a>
               </li>
-          <?php } ?>
-        <?php if($_SESSION["kullaniciYetki"] > 0){ ?><!--Ziyaretçinin oturum açıp açmadığına göre kullanıcı adı ve çıkış butonu gösteriliyor-->
+          <?php }
+              if(!$_SESSION["kullaniciYetki"] == null){ ?><!--Ziyaretçinin oturum açıp açmadığına göre kullanıcı adı ve çıkış butonu gösteriliyor-->
               <li class="nav-item active">
                 <a class="nav-link" href="#"> <?php echo $_SESSION["kullaniciAdi"]; ?> </a>
               </li>
-            </ul>
           <input type="button" class="btn btn-primary" onclick="cikis()" value="Çıkış"><!--cikis.php sayfasına yönlenecek olan Jquery "cikis()" fonksiyonunu çağırıyor-->
         <?php }
         else{ ?><!--Oturum açılmadı ise Giriş ve Üye ol sayfalarını gösteriyor-->
@@ -48,6 +47,7 @@
           <li class="nav-link"></li>
           <input type="button" class="btn btn-primary" onclick="window.location='uye-ol.php';" value="Üye Ol">
         <?php } ?>
+      </ul>
       </form>
     </div>
   </nav>
