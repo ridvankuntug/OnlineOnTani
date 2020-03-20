@@ -20,7 +20,7 @@
     }
   </script><!--Arkaplanda başka sayfadaki php kodları ile iletişim kurup çıkış işlemini yapacak ve sonucu döndürecek Jquery kodumuz-->
   <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top"><!--Bootstrap Navigasyon menümüzün başlangıcı-->
-    <a class="navbar-brand" href="#"><span id="ph-baslik"></span></a>
+    <a class="navbar-brand" href="index.php"><span id="ph-baslik"></span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,7 +52,7 @@
     </div>
   </nav>
 
-  <div class="jumbotron text-center" style="margin-bottom:0; margin-top:55px; padding:1rem"><!--Navbarın altındaki site bilgileri bölümü-->
-    <h2><span id="ph-baslik"></span></h2>
-    <h4><span id="ph-altbaslik"></span></h4>
+  <div class="jumbotron text-center" style="margin-bottom:0; margin-top:55px; padding:0.5rem"><!--Navbarın altındaki site bilgileri bölümü-->
+    <h3><span id="ph-baslik"></span></h3>
+    <h5><span id="ph-altbaslik"></span></h5>
   </div>

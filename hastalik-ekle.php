@@ -41,7 +41,7 @@
           var counter = 2;
 
           var phpPage;
-          $.get("belirtiler.php", function( my_var ) {
+          $.get("belirti-cek.php", function( my_var ) {
               phpPage = my_var;
           });
 
@@ -137,7 +137,7 @@
           <select class="form-control form-control-sm" name="belirtiID1" id='belirtiID1'>
             <option selected>Seç...</option>
             <?php
-              include("belirtiler.php");
+              include("belirti-cek.php");
             ?>
           </select>
         </div>

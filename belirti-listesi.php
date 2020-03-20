@@ -4,11 +4,12 @@
   <div class="row">
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
+
       <ul class="list-group">
-      <li class="list-group-item active">Belirtiler</li>
+      <li class="list-group-item list-group-item-primary">Belirtiler</li>
       <?php
       $hata = $_GET["hata"];
-      $basarili = $_GET["basarili"];//Yetki ve sil düğmesine tıklandığında dönen veriyi değişkene alıyor
+      $basarili = $_GET["basarili"];//Gelen veriyi değişkene alıyor
       if($hata){
         echo '<div class="alert alert-danger" role="alert">'.$hata.'</div>';
       }
@@ -38,6 +39,7 @@
       }
       ?>
       </ul>
+
       <!-- Site içeriği Sonu -->
     </div>
     <?php require("inc/right-menu.php"); ?>

@@ -12,10 +12,10 @@
       if($_SESSION["kullaniciYetki"] < 4){//İşlemi sadece admin yaptı ise gerçekleşiyor
         echo '<meta http-equiv="refresh" content="0;URL=index.php">';
       }
-      else if(!$id == null){//Yetki işlemi mi yapılacağını kontrol ediyor
+      else if(!$id == null){//İşlem yapılacak mı kontrol ediyor
         try{
           $id = $_GET['id'];
-          $query = $db->query("SELECT hastaliklar.hastalikAdi, belirtiler.belirtiAdi
+          $query = $db->query("SELECT hastaliklar.hastalikAdi, belirtiler.belirtiAdi, hastaliklar.hastalikAciklama
           FROM iliski
           INNER JOIN belirtiler  ON belirtiler.belirtiID = iliski.belirtiID
           INNER JOIN hastaliklar  ON hastaliklar.hastalikID = iliski.hastalikID
@@ -24,13 +24,16 @@
           $i=0;//Sayaç için değişken
           foreach ($query as $row) {
             if($i==0){
-              echo '<div class="list-group-item active">'. $row["hastalikAdi"] . '</div>';
+              echo '<div class="list-group-item list-group-item-primary">'. $row["hastalikAdi"] .
+              '<a href="hastaliklar.php"><button type="button" class="btn btn-sm btn-primary float-right" >Geri</button></a></div>';
+              echo '<div class="list-group-item list-group-item-info">'. $row["hastalikAciklama"] .
+              '</div>';
             }
             echo '<div class="list-group-item">'.++$i.
             '- <b>Belirti: </b>'.$row["belirtiAdi"].'</div>';
           }
         }catch(PDOException $e) {
-          echo '<meta http-equiv="refresh" content="0;URL=kullanici-yetkileri.php?hata=Bir%20Sorun%20Oluştu.">';
+          echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?hata=Bir%20Sorun%20Oluştu.">';
         }
       }
       else if(!$sil == null){//Silme işlemi mi yapılacağını kontrol ediyor
@@ -45,14 +48,14 @@
             echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?basarili=Silindi.">';
           }
           else{
-            echo '<meta http-equiv="refresh" content="0;URL=kullanici-yetkileri.php?hata=Bir%20Sorun%20Oluştu.">';
+            echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?hata=Bir%20Sorun%20Oluştu.">';
           }
         }catch(PDOException $e) {
-          echo '<meta http-equiv="refresh" content="0;URL=kullanici-yetkileri.php?hata=Bir%20Sorun%20Oluştu.">';
+          echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?hata=Bir%20Sorun%20Oluştu.">';
         }
       }
       else{
-        echo '<meta http-equiv="refresh" content="0;URL=kullanici-yetkileri.php?hata=Yanlış%20Id.">';
+        echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?hata=Yanlış%20Id.">';
       }
       ?>
       </div>

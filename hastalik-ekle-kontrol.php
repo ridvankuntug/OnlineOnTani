@@ -86,6 +86,7 @@
           $hastalik_id, $belirtiID10
         ));
       }
+      echo '<div class="alert alert-info" role="alert"> Ekleme Başarılı. </div>';
     }
     catch(PDOException $e){
       echo '<div class="alert alert-success" role="alert">' + $e + '</div>';
