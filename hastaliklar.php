@@ -16,26 +16,21 @@
         echo '<div class="alert alert-success" role="alert">'.$basarili.'</div>';
       }//Yetki ve sil düğmesine tıklandığında dönen sonucu gösteriyor
 
-      if($_SESSION["kullaniciYetki"] < 2){//Sayfaya sadece admin erişebiliyor
-        echo '<meta http-equiv="refresh" content="0;URL=index.php">';
-      }
-      else{
-        try{
-          $query = $db->query("SELECT hastaliklar.hastalikID, hastaliklar.hastalikAdi, poliklinikler.poliklinikAdi
-          FROM hastaliklar
-          INNER JOIN poliklinikler ON hastaliklar.poliklinikID=poliklinikler.poliklinikID;")->fetchAll(PDO::FETCH_ASSOC);//Hastalik listesini çeken sql kodu
-          $i=0;//Sayaç için değişken
-          foreach ($query as $row) {
-            echo '<a href="hastalik.php?id='.$row["hastalikID"].'"><div class="list-group-item list-group-item-action">'.++$i.
-            '- <b>Hastalık: </b>'.$row["hastalikAdi"].' <b>Poliklinik: </b>'.$row["poliklinikAdi"].' </a>';
-            if($_SESSION["kullaniciYetki"] > 3){
-              echo ' <a href="hastalik.php?sil='.$row["hastalikID"].'"><button type="button" class=" btn btn-sm btn-primary" >Sil</button></a>';
-            }//Sil butonunu sadece yetkililer görüyor
-            echo '</div>';
-          }
-        }catch(Exception $e) {//hata olursa ekrana yazıyoruz
-          echo '<div class="alert alert-success" role="alert"> Bir sorun oluşmuş gibi görünüyor. Anasayfaya dönmek için <a href="index.php">tıklayınız</a>.</div>';
+      try{
+        $query = $db->query("SELECT hastaliklar.hastalikID, hastaliklar.hastalikAdi, poliklinikler.poliklinikAdi
+        FROM hastaliklar
+        INNER JOIN poliklinikler ON hastaliklar.poliklinikID=poliklinikler.poliklinikID;")->fetchAll(PDO::FETCH_ASSOC);//Hastalik listesini çeken sql kodu
+        $i=0;//Sayaç için değişken
+        foreach ($query as $row) {
+          echo '<a href="hastalik.php?id='.$row["hastalikID"].'"><div class="list-group-item list-group-item-action">'.++$i.
+          '- <b>Hastalık: </b>'.$row["hastalikAdi"].' <b>Poliklinik: </b>'.$row["poliklinikAdi"].' </a>';
+          if($_SESSION["kullaniciYetki"] > 3){
+            echo ' <a href="hastalik.php?sil='.$row["hastalikID"].'"><button type="button" class=" btn btn-sm btn-primary" >Sil</button></a>';
+          }//Sil butonunu sadece yetkililer görüyor
+          echo '</div>';
         }
+      }catch(Exception $e) {//hata olursa ekrana yazıyoruz
+        echo '<div class="alert alert-success" role="alert"> Bir sorun oluşmuş gibi görünüyor. Anasayfaya dönmek için <a href="index.php">tıklayınız</a>.</div>';
       }
       ?>
       </ul>

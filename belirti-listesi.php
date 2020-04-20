@@ -17,25 +17,20 @@
         echo '<div class="alert alert-success" role="alert">'.$basarili.'</div>';
       }//Yetki ve sil düğmesine tıklandığında dönen sonucu gösteriyor
 
-      if($_SESSION["kullaniciYetki"] < 2){//Sayfaya sadece admin erişebiliyor
-        echo '<meta http-equiv="refresh" content="0;URL=index.php">';
-      }
-      else{
-        try{
-          $query = $db->query("SELECT * FROM belirtiler
-          ")->fetchAll(PDO::FETCH_ASSOC);//Belirti listesini çeken sql kodu
-          $i=0;//Sayaç için değişken
-          foreach ($query as $row) {
-            echo '<div class="list-group-item list-group-item-action">'.++$i.
-            '- <b>Belirti: </b>'.$row["belirtiAdi"];
-            if($_SESSION["kullaniciYetki"] > 3){
-              echo ' <a href="belirti-sil.php?sil='.$row["belirtiID"].'"><button type="button" class=" btn btn-sm btn-primary" >Sil</button></a>';
-            }//Sil butonunu sadece yetkililer görüyor
-            echo '</div>';
-          }
-        }catch(Exception $e) {//hata olursa ekrana yazıyoruz
-          echo '<div class="alert alert-success" role="alert"> Bir sorun oluşmuş gibi görünüyor. Anasayfaya dönmek için <a href="index.php">tıklayınız</a>.</div>';
+      try{
+        $query = $db->query("SELECT * FROM belirtiler
+        ")->fetchAll(PDO::FETCH_ASSOC);//Belirti listesini çeken sql kodu
+        $i=0;//Sayaç için değişken
+        foreach ($query as $row) {
+          echo '<div class="list-group-item list-group-item-action">'.++$i.
+          '- <b>Belirti: </b>'.$row["belirtiAdi"];
+          if($_SESSION["kullaniciYetki"] > 3){
+            echo ' <a href="belirti-sil.php?sil='.$row["belirtiID"].'"><button type="button" class=" btn btn-sm btn-primary" >Sil</button></a>';
+          }//Sil butonunu sadece yetkililer görüyor
+          echo '</div>';
         }
+      }catch(Exception $e) {//hata olursa ekrana yazıyoruz
+        echo '<div class="alert alert-success" role="alert"> Bir sorun oluşmuş gibi görünüyor. Anasayfaya dönmek için <a href="index.php">tıklayınız</a>.</div>';
       }
       ?>
       </ul>

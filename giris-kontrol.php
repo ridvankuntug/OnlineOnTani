@@ -19,7 +19,8 @@
       if($select){
         $_SESSION["kullaniciAdi"] = ucwords(strtolower($select["kullanici_ad"]));
         $_SESSION["kullaniciYetki"] = $select["kullanici_yetki"];
-        $_SESSION["kullaniciID"] = $select["kullanici_id"];//Daha sonra lazım olacak verileri her seferinde veritabanına gitmemek için global Session değişkenlerine atıyoruz
+        $_SESSION["kullaniciID"] = $select["kullanici_id"];
+        $_SESSION["kullaniciEPosta"] = $select["kullanici_eposta"];//Daha sonra lazım olacak verileri her seferinde veritabanına gitmemek için global Session değişkenlerine atıyoruz
         echo '<div class="alert alert-success" role="alert"> Hoşgeldin ' .$_SESSION["kullaniciAdi"]. '. Birazdan anasayfaya yönlendirileceksin. Ya da beklemek istemiyorsan <a href="index.php">tıkla</a>.</div>';//giris.php sayfasında görünecek olan hoşgeldin mesajı
         echo '<meta http-equiv="refresh" content="3;URL=index.php">';//3sn bekleyip anasaydfaya yönlendiriyoruz
       }

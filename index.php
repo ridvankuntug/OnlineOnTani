@@ -14,7 +14,7 @@
       <p><span id="ph-icerik2"></span></p>
         </div>
         <div class="col-sm-3">
-      <a href="belirtiler.php"><button class="btn btn-info">Şimdi Başla</button></a>
+      <a href="belirtiler.php" class="float-right"><button class="btn btn-info">Şimdi Başla</button></a>
         </div>
       </div>
 

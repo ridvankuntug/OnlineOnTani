@@ -52,7 +52,7 @@
     </div>
   </nav>
 
-  <div class="jumbotron text-center" style="margin-bottom:0; margin-top:55px; padding:0.5rem"><!--Navbarın altındaki site bilgileri bölümü-->
+  <div class="jumbotron text-center" style="margin-top:55px; padding:0.01%"><!--Navbarın altındaki site bilgileri bölümü-->
     <h3><span id="ph-baslik"></span></h3>
     <h5><span id="ph-altbaslik"></span></h5>
   </div>

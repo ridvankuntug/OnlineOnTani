@@ -9,10 +9,7 @@
       $id = $_GET["id"];
       $sil = $_GET["sil"];//hastaliklar.php sayfasından gelen veriler
 
-      if($_SESSION["kullaniciYetki"] < 4){//İşlemi sadece admin yaptı ise gerçekleşiyor
-        echo '<meta http-equiv="refresh" content="0;URL=index.php">';
-      }
-      else if(!$id == null){//İşlem yapılacak mı kontrol ediyor
+      if(!$id == null){//İşlem yapılacak mı kontrol ediyor
         try{
           $id = $_GET['id'];
           $query = $db->query("SELECT hastaliklar.hastalikAdi, belirtiler.belirtiAdi, hastaliklar.hastalikAciklama
@@ -24,9 +21,9 @@
           $i=0;//Sayaç için değişken
           foreach ($query as $row) {
             if($i==0){
-              echo '<div class="list-group-item list-group-item-primary">'. $row["hastalikAdi"] .
+              echo '<div class="list-group-item list-group-item-primary active">'. $row["hastalikAdi"] .
               '<a href="hastaliklar.php"><button type="button" class="btn btn-sm btn-primary float-right" >Geri</button></a></div>';
-              echo '<div class="list-group-item list-group-item-info">'. $row["hastalikAciklama"] .
+              echo '<div class="list-group-item list-group-item-primary">'. $row["hastalikAciklama"] .
               '</div>';
             }
             echo '<div class="list-group-item">'.++$i.
@@ -36,7 +33,7 @@
           echo '<meta http-equiv="refresh" content="0;URL=hastaliklar.php?hata=Bir%20Sorun%20Oluştu.">';
         }
       }
-      else if(!$sil == null){//Silme işlemi mi yapılacağını kontrol ediyor
+      else if($sil != null && $_SESSION["kullaniciYetki"] > 3){//Silme işlemi mi yapılacağını kontrol ediyor
         try{
           $query = $db->prepare("DELETE FROM hastaliklar WHERE
           hastalikID = ?");

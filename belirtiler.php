@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
-      <div class="font-weight-bold">Belirtilerinizi "CTRL+F" ile daha kolay bulabilirsiniz</div>
+      <div class="font-weight-bold">Belirtilerinizi "CTRL+F" ile daha kolay bulabilirsiniz. Mobil için seçeneklerden "sayfada bul" seçeneğini kullanın.</div>
       <?php
       $hata = $_GET["hata"];
       $basarili = $_GET["basarili"];//Yetki ve sil düğmesine tıklandığında dönen veriyi değişkene alıyor
@@ -38,11 +38,11 @@
             }
             echo '<div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck'.$i.'" name="dizi[]" value="'.$belirtiler[$i][0].'">
-                    <label class="custom-control-label" for="customCheck'.$i.'">'.$belirtiler[$i][0] . ' -) ' . $belirtiler[$i][1].'</label>
+                    <label class="custom-control-label" for="customCheck'.$i.'"><!--'.$belirtiler[$i][0] . ' -) -->' . $belirtiler[$i][1].'</label>
                   </div>';
           }
         ?>
-        <input type="submit" class="btn btn-primary" value="Gönder">
+        <input type="submit" class="btn btn-primary float-right" style="position:sticky; bottom:5%" value="Gönder">
       </form>
       <!-- Site içeriği Sonu -->
     </div>

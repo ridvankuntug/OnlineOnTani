@@ -106,9 +106,10 @@
               var belirtiID10 = b10.options[b10.selectedIndex].value;
             }
 
+            var hastalikAciklama = $("#hastalikAciklama").val();
             var kaynakAdi = $("#kaynakAdi").val();
 
-            $.post('hastalik-ekle-kontrol.php', {hastalikAdi: hastalikAdi, poliklinikID: poliklinikID, belirtiID1: belirtiID1, belirtiID2: belirtiID2, belirtiID3: belirtiID3, belirtiID4: belirtiID4, belirtiID5: belirtiID5, belirtiID6: belirtiID6, belirtiID7: belirtiID7, belirtiID8: belirtiID8, belirtiID9: belirtiID9, belirtiID10: belirtiID10, kaynakAdi: kaynakAdi }, function (gelen_cevap) {
+            $.post('hastalik-ekle-kontrol.php', {hastalikAdi: hastalikAdi, poliklinikID: poliklinikID, belirtiID1: belirtiID1, belirtiID2: belirtiID2, belirtiID3: belirtiID3, belirtiID4: belirtiID4, belirtiID5: belirtiID5, belirtiID6: belirtiID6, belirtiID7: belirtiID7, belirtiID8: belirtiID8, belirtiID9: belirtiID9, belirtiID10: belirtiID10, hastalikAciklama: hastalikAciklama, kaynakAdi: kaynakAdi }, function (gelen_cevap) {
               $('#sonucForm').html(gelen_cevap);
             });
           });
@@ -142,8 +143,13 @@
           </select>
         </div>
         <div class="form-group">
+          &nbsp;&nbsp;
           <input class="btn btn-primary btn-sm" type='button' value='Belirti Ekle' id='addButton'>
           <input class="btn btn-primary btn-sm" type='button' value=' Alanı Sil ' id='removeButton'>
+        </div>
+        <div class="form-group">
+          <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Açıklama</label>
+          <input type="text" class="form-control form-control-sm" id="hastalikAciklama" name="kaynakAdi" placeholder="Hastalık hakkında">
         </div>
         <div class="form-group">
           <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Kaynak</label>
