@@ -4,22 +4,29 @@
         <!--<li class="nav-item">
           <a class="nav-link" href="grup-listesi.php">Grup Listesi</a>
         </li>-->
+        <li class="nav-item active">
+          <a class="nav-link" href="poliklinikler.php">Poliklinikler</a>
+        </li>
+      <?php
+        if($_SESSION["kullaniciYetki"] >= 4){//Sadece yetkiliye görünüyor
+      ?>
         <li class="nav-item dropdown active">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hastalıklar
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="hastaliklar.php">Hastalıklar</a>
-            <?php
-            if($_SESSION["kullaniciYetki"] >= 4){//Sadece yetkiliye görünüyor
-            ?>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="hastalik-ekle.php">Hastalık Ekle</a>
-            <?php } ?>
           </div>
         </li>
+      <?php }else{ ?>
         <li class="nav-item active">
-          <a class="nav-link" href="belirti-listesi.php">Beliritler</a>
+          <a class="nav-link" href="hastaliklar.php">Hastalıklar</a>
+        </li>
+        <?php } ?>
+        <li class="nav-item active">
+          <a class="nav-link" href="belirtiler.php">Belirtiler</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="iletisim.php">İletişim</a>

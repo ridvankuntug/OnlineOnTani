@@ -15,8 +15,8 @@
       }
 
       for($i = 1 ; $i < sizeof($belirtiler)+1 ; $i++){
-        echo '<option value="'.$belirtiler[$i][0].'">'.$i.
-          '-'.$belirtiler[$i][1].
+        echo '<option value="'.$belirtiler[$i][0].'">'./*$i.
+          '-'.*/$belirtiler[$i][1].
           '</option>';
       }
     }catch(Exception $e) {//hata olursa ekrana yazıyoruz

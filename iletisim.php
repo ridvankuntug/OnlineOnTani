@@ -23,12 +23,12 @@
       </script><!-- Kullanıcı bilgilerini uye-ol-kontrol.php sayfasına gönderen Jquery kodu -->
       <form>
         <div class="form-group">
-          <label for="isim1">Ad Soyad</label>
-          <input type="text" class="form-control"  id="isim1" name="isim1" placeholder="Tam Adınız" <?php if($_SESSION["kullaniciAdi"]){ echo 'value="' . $_SESSION["kullaniciAdi"] . '" readonly'; } ?> required>
+          <label for="isim">Ad Soyad</label>
+          <input type="text" class="form-control"  id="isim" name="isim" placeholder="Tam Adınız" <?php if($_SESSION["kullaniciAdi"]){ echo 'value="' . $_SESSION["kullaniciAdi"] . '" readonly'; } ?> required>
         </div>
         <div class="form-group">
-          <label for="eposta1">E-Posta</label>
-          <input type="email" class="form-control" id="eposta1" name="eposta1" aria-describedby="emailHelp" placeholder="E-Postanız" <?php if($_SESSION["kullaniciEPosta"]){ echo 'value="' . $_SESSION["kullaniciEPosta"] . '" readonly'; } ?> required>
+          <label for="eposta">E-Posta</label>
+          <input type="email" class="form-control" id="eposta" name="eposta" aria-describedby="emailHelp" placeholder="E-Postanız" <?php if($_SESSION["kullaniciEPosta"]){ echo 'value="' . $_SESSION["kullaniciEPosta"] . '" readonly'; } ?> required>
           <small id="emailHelp" class="form-text text-muted">Size ulaşmamız için gerekli.</small>
         </div>
         <div class="form-group">
@@ -41,7 +41,7 @@
         </div>
         <div class="form-group" id="sonucForm"></div>
         <div class="form-group">
-          <input type="button" class="btn btn-primary" onclick="ilet()" value="Kaydol">
+          <input type="button" class="btn btn-primary" onclick="ilet()" value="İlet">
         </div>
       </form><!-- Üye bilgileri formu -->
         </div>

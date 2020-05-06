@@ -23,7 +23,7 @@
         $i=0;//Sayaç için değişken
         foreach ($query as $row) {
           echo '<div class="list-group-item list-group-item-action">'.++$i.
-          '- <b>Belirti: </b>'.$row["belirtiAdi"];
+          '- <b>Belirti: </b>'.ucwords($row["belirtiAdi"]);
           if($_SESSION["kullaniciYetki"] > 3){
             echo ' <a href="belirti-sil.php?sil='.$row["belirtiID"].'"><button type="button" class=" btn btn-sm btn-primary" >Sil</button></a>';
           }//Sil butonunu sadece yetkililer görüyor

@@ -5,7 +5,7 @@
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
       <ul class="list-group">
-      <li class="list-group-item active"><b>Hastalıklar</b></li>
+      <li class="list-group-item active"><b>Poliklinikler</b></li>
       <?php
       $hata = $_GET["hata"];
       $basarili = $_GET["basarili"];//Yetki ve sil düğmesine tıklandığında dönen veriyi değişkene alıyor
@@ -17,17 +17,13 @@
       }//Yetki ve sil düğmesine tıklandığında dönen sonucu gösteriyor
 
       try{
-        $query = $db->query("SELECT hastaliklar.hastalikID, hastaliklar.hastalikAdi
-        FROM hastaliklar
-        ORDER BY hastaliklar.hastalikID ASC;")->fetchAll(PDO::FETCH_ASSOC);//Hastalik listesini çeken sql kodu
+        $query = $db->query("SELECT poliklinikler.poliklinikID, poliklinikler.poliklinikAdi
+        FROM poliklinikler
+        ORDER BY poliklinikler.poliklinikID ASC;")->fetchAll(PDO::FETCH_ASSOC);//Poliklinik listesini çeken sql kodu
         $i=0;//Sayaç için değişken
         foreach ($query as $row) {
-          echo '<a href="hastalik.php?id='.$row["hastalikID"].'"><div class="list-group-item list-group-item-action">'.++$i.
-          '- <b>'.$row["hastalikAdi"].'</b> </a>';
-          if($_SESSION["kullaniciYetki"] > 3){
-            echo ' <a href="hastalik.php?sil='.$row["hastalikID"].'"><button type="button" class=" btn btn-sm btn-primary float-right" >Sil</button></a>';
-          }//Sil butonunu sadece yetkililer görüyor
-          echo '</div>';
+          echo '<a href="poliklinik.php?id='.$row["poliklinikID"].'"><div class="list-group-item list-group-item-action">'.++$i.
+          '- <b>'.$row["poliklinikAdi"].'</b></a></div>';
         }
       }catch(Exception $e) {//hata olursa ekrana yazıyoruz
         echo '<div class="alert alert-success" role="alert"> Bir sorun oluşmuş gibi görünüyor. Anasayfaya dönmek için <a href="index.php">tıklayınız</a>.</div>';

@@ -38,7 +38,7 @@
             }
             echo '<div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="customCheck'.$i.'" name="dizi[]" value="'.$belirtiler[$i][0].'">
-                    <label class="custom-control-label" for="customCheck'.$i.'"><!--'.$belirtiler[$i][0] . ' -) -->' . $belirtiler[$i][1].'</label>
+                    <label class="custom-control-label" for="customCheck'.$i.'"><!--'.$belirtiler[$i][0] . ' -) -->' . ucwords($belirtiler[$i][1]).'</label>
                   </div>';
           }
         ?>
