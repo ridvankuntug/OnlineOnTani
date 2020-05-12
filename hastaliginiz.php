@@ -5,14 +5,11 @@
   <div class="row">
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
-      <p class="alert alert-warning">Aşağıdakiler, belirttiğiniz belirtilere uyan hastalıkların listesidir. Hangi polikliniğe gitmeniz gerektiğini anlamanız için yardımcı olmak amacı ile listenemiştir. </br> En doğru sonuç için bir sağlık kuruluşuna başvurmalısınız.</p>
+      <div class="alert alert-warning">Aşağıdakiler, belirttiğiniz belirtilere uyan hastalıkların listesidir. Hangi polikliniğe gitmeniz gerektiğini anlamanız için yardımcı olmak amacı ile listenemiştir. </br> En doğru sonuç için bir sağlık kuruluşuna başvurmalısınız.</div>
       <?php
         $i = 0;
         foreach($_POST['dizi'] as $gelen){
-          $belirti[$i] = $gelen;
-          $i++;
-        }
-        for($j = 0 ; $j < sizeof($belirti) ; $j++){
+          $belirti[$i++] = $gelen;//Gelen belirti ID lerini diziye alıyor
         }
         try{
           $k=0;//Sayaç için değişken
@@ -26,8 +23,7 @@
             foreach ($query as $row) {
               $hastalikID[0][$k] = $row['hastalikID'];
               $hastalikID[1][$k] = $row['hastalikAdi'];
-              $hastalikID[2][$k] = $row['hastalikAciklama'];
-              $k++;
+              $hastalikID[2][$k++] = $row['hastalikAciklama'];
             }
           }
           array_multisort($hastalikID[0], $hastalikID[1], $hastalikID[2]);
@@ -36,8 +32,7 @@
             if($hastalikID[0][$l] != $hastalikID[0][$l-1]){
               $hastaliklar[1][$m] = $hastalikID[0][$l];
               $hastaliklar[2][$m] = $hastalikID[1][$l];
-              $hastaliklar[3][$m] = $hastalikID[2][$l];
-              $m++;
+              $hastaliklar[3][$m++] = $hastalikID[2][$l];
             }
             $hastaliklar[0][$m-1]++;
           }
@@ -51,12 +46,12 @@
             $sayac = 5;
           }
           if($sayac == 0){
-            echo '<p class="alert alert-danger">Belirtiğiniz belirtilere uygun hastalık bulunamamıştır.</p>';
+            echo '<div class="alert alert-danger">Belirtiğiniz belirtilere uygun hastalık bulunamamıştır.</div>';
           }
           for($l = 0 ; $l < $sayac ; $l++){
             $hastalik_ID = $hastaliklar[1][$l];
 
-            echo '<p class="alert alert-info"><b><a href="hastalik.php?id='.$hastaliklar[1][$l].'">
+            echo '<div class="alert alert-info"><b><a href="hastalik.php?id='.$hastaliklar[1][$l].'">
             <svg class="bi bi-reply-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M9.079 11.9l4.568-3.281a.719.719 0 000-1.238L9.079 4.1A.716.716 0 008 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z"/>
             </svg>
@@ -69,18 +64,32 @@
             WHERE iliski_hb.hastalikID = $hastalik_ID
             ;")->fetchAll(PDO::FETCH_ASSOC);//Poliklinik listesini çeken sql kodu
             $i=0;
+            $j=0;
             foreach ($query as $row) {
               foreach($belirti as $deger){
                 if($deger == $row['belirtiID']){
-                  if($i>0){ echo ', ';}
-                  $i++;
+                  if($i++>0){ echo ', ';}//İlk satır ise virgül olmasını engelliyor
                   echo $row['belirtiAdi'];
                 }
               }
+              $hastalikBelirti[$j++] = $row['belirtiAdi'];
             }
 
-            echo '</br> <a href="hastalik.php?id='.$hastaliklar[1][$l].'"><u>Bu hastalığın diğer belirtilerini gör</u></a> </br> '
-            . $hastaliklar[3][$l] . ' </br>
+            echo '</br> <a class="btn btn-info btn-sm" data-toggle="collapse" href="#collapse'.$l.'" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Bu Hastalığın Diğer Belirtileri
+                        </a>
+                        <div class="collapse" id="collapse'.$l.'">
+                          <div class="card card-body alert-primary">
+                            ';
+            $i=0;
+            foreach($hastalikBelirti as $row){
+              if($i++>0){ echo ', ';}//İlk satır ise virgül olmasını engelliyor
+                  echo $row;
+            }
+
+            echo '        </div>
+                        </div>
+            </br>' .$hastaliklar[3][$l]. ' </br>
             Gidebileceğiniz poliklinikler: </br> <b>';
 
             $query = $db->query("SELECT poliklinikler.poliklinikAdi, poliklinikler.poliklinikID
@@ -95,7 +104,7 @@
               </svg>
               ' .$row['poliklinikAdi']. '</a></br>';
             }
-            echo '</b></p>';
+            echo '</b></div>';
           }
         }
         catch(Exception $e){
