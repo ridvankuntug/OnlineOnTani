@@ -10,6 +10,8 @@
   <script src="bootstrap/popper.min.js"></script><!--Bootstrap için gerekli dosya yollarını gösteriyoruz-->
   <script src="bootstrap/js/bootstrap.min.js"></script><!--Bootstrap için gerekli dosya yollarını gösteriyoruz-->
   <link rel="stylesheet" href="inc/strings.css">
+
+  <script data-ad-client="ca-pub-7404800709284830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!--AdSense-->
 </head>
 <body>
   <script type="text/javascript">
@@ -52,7 +54,7 @@
     </div>
   </nav>
 
-  <div class="jumbotron text-center" style="margin-top:55px; padding:0.01%"><!--Navbarın altındaki site bilgileri bölümü-->
-    <h3><span id="ph-baslik"></span></h3>
-    <h5><span id="ph-altbaslik"></span></h5>
-  </div>
+  <div class="jumbotron text-center" style="margin-top:55px; padding:0.01%">
+    <!--<h3><span id="ph-baslik"></span></h3>
+    <h5><span id="ph-altbaslik"></span></h5>-->
+  </div><!--Navbarın altındaki site bilgileri bölümü-->

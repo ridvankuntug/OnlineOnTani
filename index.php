@@ -5,8 +5,8 @@
     <div class="col-sm-9">
       <!-- Site içeriği Başlangıcı -->
       ​<picture>
-        <source srcset="img/diagnosis2.jpg" type="image/svg+xml">
-        <img src="img/diagnosis2.jpg" class="img-fluid img-thumbnail" alt="...">
+        <source srcset="img/diagnosis3.jpg" type="image/svg+xml">
+        <img src="img/diagnosis3.jpg" class="img-fluid img-thumbnail" alt="...">
       </picture><!-- Anasayfadaki resim kodu -->
       <div class="row">
         <div class="col-sm-9">

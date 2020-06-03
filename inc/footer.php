@@ -1,6 +1,15 @@
 <div class="jumbotron text-center" style="margin-bottom:0; margin-top:30px;"><!--Sayfa alt bölmesi ayarları-->
-<h2><span id="ph-baslik"></span></h2>
-<h4><span id="ph-altbaslik"></span></h4>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Yatay görüntülü -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7404800709284830"
+     data-ad-slot="6288996702"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 </body>

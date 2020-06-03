@@ -11,10 +11,17 @@
 
     <div class="col-sm-3"><!--Sayfanın ne kadarını kaplayacağını belirliyoruz-->
       <div class="myRightSideBar">
-        <h3>Hakkımızda</h3>
-        <p><span id="ph-baslik"></span></p>
-        <p><span id="ph-icerik1"></span></p>
-        <p><span id="ph-icerik2"></span></p>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Kare görüntülü -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-7404800709284830"
+          data-ad-slot="6085623200"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
         <h3><span id="ph-menu"></span></h3>
         <ul class="nav nav-pills flex-column">
           <?php require("inc/links.php"); ?><!--Menü içeriğimiz links.php sayfasından geliyor-->
