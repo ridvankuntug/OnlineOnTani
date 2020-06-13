@@ -1,4 +1,4 @@
-<?php require("inc/header.php"); ?>
+<?php $deneme = 'Hakkımızda'; require("inc/header.php"); ?>
 
 <div class="container" style="margin-top:30px">
   <div class="row">

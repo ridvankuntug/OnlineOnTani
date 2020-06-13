@@ -1,4 +1,4 @@
-<?php require("inc/header.php"); ?><!--header, navbar gibi gerekli kodlar-->
+<?php $deneme = 'Giriş'; require("inc/header.php"); ?><!--header, navbar gibi gerekli kodlar-->
 
 <div class="container" style="margin-top:30px">
   <div class="row">

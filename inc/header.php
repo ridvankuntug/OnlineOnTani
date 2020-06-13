@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <title>Online Ön Tanı</title>
+  <title>Online Ön Tanı <?php echo $deneme; ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!--Tarayıcı uyumluluğu için-->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"><!--Bootstrap için gerekli dosya yollarını gösteriyoruz-->

@@ -1,5 +1,5 @@
 <!-- Yeni bir sayfa oluşturulacağı zaman her seferinde bu kodlar arasına yazılacak -->
-<?php require("inc/header.php"); ?>
+<?php $deneme = 'İletişim'; require("inc/header.php"); ?>
 
 <div class="container" style="margin-top:30px">
   <div class="row">

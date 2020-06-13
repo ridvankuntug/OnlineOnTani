@@ -1,4 +1,4 @@
-<?php require("inc/header.php"); ?><!--TODO:-->
+<?php $deneme = 'Ana Sayfa'; require("inc/header.php"); ?><!--TODO:-->
 
 <div class="container" style="margin-top:30px">
   <div class="row">
