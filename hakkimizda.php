@@ -13,12 +13,9 @@
       </p>
       <p>
         <b>Tıbbı Bilgiler:</b> </br>
-        Sami Basmacı </br>
+        Dr. Sami Basmacı </br>
         <b>Yazılım:</b> </br>
         Rıdvan Küntuğ </br>
-        Dilan Tekgöz </br>
-        Aysel Çelik </br>
-        Adalet Pertav </br>
       </p>
 
       <!-- Site içeriği Sonu -->

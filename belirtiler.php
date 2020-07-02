@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
-      <div class="font-weight-bold">Belirtilerinizi "CTRL+F" ile daha kolay bulabilirsiniz. Mobil için seçeneklerden "sayfada bul" seçeneğini kullanın.</div>
+      <div class="font-weight-bold">İpucu: Bu sayfada arama teriminizi kolayca bulabilmek için Ctrl+F veya ⌘-F (Mac) tuşlarına basın ve bulma çubuğunu kullanın. Mobil için seçeneklerden "sayfada bul" seçeneğini kullanın.</div>
       <?php
       $hata = $_GET["hata"];
       $basarili = $_GET["basarili"];//Yetki ve sil düğmesine tıklandığında dönen veriyi değişkene alıyor

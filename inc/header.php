@@ -3,7 +3,13 @@
 <html lang="tr">
 <head>
   <title>Online Ön Tanı <?php echo $deneme; ?></title>
+
+  <link rel="icon" href="img/ico.png">
+
   <meta charset="utf-8">
+  <meta name="description" content="Hangi polikliniğe gitmeniz gerektiğine yardımcı olalım.">
+  <meta name="keywords" content="Online Ön Tanı, Çevrim İçi Teşhis, Ön Tanı, Ön Teşhis, Çevrimiçi Teşhis, Çevrim içi tanı, Tıp, Online, Çevrimiçi, Ön, Yeni, Tanı, Teşhis, Hasta, Hastalık, Sağlık, Doktor, Hekim, Muayene, Tarama, Check-up, Hangi, Poliklinik, Bölüm, Uzman, İleri, Teknik">
+  <meta name="author" content="Rıdvan Küntuğ">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!--Tarayıcı uyumluluğu için-->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"><!--Bootstrap için gerekli dosya yollarını gösteriyoruz-->
   <script src="bootstrap/jquery.min.js"></script><!--Bootstrap için gerekli dosya yollarını gösteriyoruz-->
@@ -22,7 +28,9 @@
     }
   </script><!--Arkaplanda başka sayfadaki php kodları ile iletişim kurup çıkış işlemini yapacak ve sonucu döndürecek Jquery kodumuz-->
   <nav class="navbar navbar-expand-sm navbar-dark bg-info fixed-top"><!--Bootstrap Navigasyon menümüzün başlangıcı-->
-    <a class="navbar-brand" href="index.php"><span id="ph-baslik"></span></a>
+    <a class="navbar-brand" href="index.php">
+      <span id="ph-baslik"></span>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
