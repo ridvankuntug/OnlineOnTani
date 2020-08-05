@@ -4,6 +4,7 @@
   <div class="row">
     <div class="col-sm-9 text-center">
       <!-- Site İçeriği Başlangıcı -->
+      <h2>Hakkımızda:</h2>
       <p>
         Bu web sitesi,</br> hastaların kendilerinde gördüğü belirtileri seçerek,</br>
         hastalığının ne olabileceği </br>

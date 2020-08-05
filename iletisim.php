@@ -21,6 +21,7 @@
           });
         }
       </script><!-- Kullanıcı bilgilerini uye-ol-kontrol.php sayfasına gönderen Jquery kodu -->
+      <h2>İletişim:</h2>
       <form>
         <div class="form-group">
           <label for="isim">Ad Soyad</label>

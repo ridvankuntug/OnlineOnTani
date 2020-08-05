@@ -6,6 +6,9 @@
     <div class="col-sm-9">
       <!-- Site İçeriği Başlangıcı -->
 
+
+
+
       <!-- Site içeriği Sonu -->
     </div>
     <?php require("inc/right-menu.php"); ?>

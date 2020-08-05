@@ -38,7 +38,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <?php require("inc/links.php"); ?><!--Menü içeriğimiz links.php sayfasından geliyor-->
+        <li class="nav-item active">
+          <script async src='https://cse.google.com/cse.js?cx=5f92abb95bf0f2d0c'></script><div class="gcse-searchbox-only"></div>
+        </li>
       </ul>
+      </form>
       <form class="form-inline my-2 my-lg-0" id="sonucCikis">
         <ul class="navbar-nav mr-auto">
           <?php if($_SESSION["kullaniciYetki"] == 5){ ?><!--Kullıcılar sayfasını sadece admin görüntüleyebilir-->
@@ -58,10 +62,9 @@
           <input type="button" class="btn btn-primary" onclick="window.location='uye-ol.php';" value="Üye Ol">
         <?php } ?>
       </ul>
-      </form>
+
     </div>
   </nav>
-
   <div class="jumbotron text-center" style="margin-top:55px; padding:0.01%">
     <!--<h3><span id="ph-baslik"></span></h3>
     <h5><span id="ph-altbaslik"></span></h5>-->
